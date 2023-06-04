@@ -28,7 +28,7 @@ docker run -d -p 8888:80 nginx    # -d=daemon (не интеррактивно)
 
 
 
-docker build -t test01 .
+docker build -t test01:v1.00 .    # Делаем свой image из Dockerfile (должны быть в той же дирректории). Имя=test01, TAG=v1.00
 docker images
 
 docker run -it  -p 1234:80  test01:latest
