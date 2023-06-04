@@ -12,19 +12,19 @@ sudo usermod -aG docker $USER   # Добавить профиль в групп�
 >>>logout/login<<<
 ```
 
-docker run hello-world
+docker run hello-world    # Устанавливаем первый image для проверки работоспособности
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-docker ps
-docker ps -a
-docker images
+docker ps   # Контейнеры которые работаю сейчас
+docker ps -a    # Контейнеры которые работали ранее
+docker images   # Посмотреть все Docker images что загружены
 
 
 docker search tomcat
 docker pull tomcat
-docker run -it -p 1234:8080 tomcat
+docker run -it -p 1234:8080 tomcat    # -it=интеррактивно (наблюдать за процессом), -p=перенаправление портов
 docker run -it -p 8888:80 nginx
-docker run -d -p 8888:80 nginx
+docker run -d -p 8888:80 nginx    # -d=daemon (не интеррактивно)
 
 
 
@@ -41,7 +41,7 @@ docker tag test01_ubuntu test01_ubuntu-PROD
 docker tag test01_ubuntu test01_ubuntu-PROD:v2
 
 docker rm   # delete container
-docker rmi  # delete image
+docker rmi    # delete image
 
 UPDATE IMAGE
 ~~~~~~~~~~~~~
