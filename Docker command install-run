@@ -32,28 +32,28 @@ docker run -d -p 8888:80 nginx
 
 
 
-docker build -t denis .
+docker build -t test01 .
 docker images
 
-docker run -it  -p 1234:80  denis:latest
-docker run -d -p  1234:80  denis:latest
+docker run -it  -p 1234:80  test01:latest
+docker run -d -p  1234:80  test01:latest
 
 docker  ps     # list containers
 docker  ps -a  # list all containers
 
-docker tag denis_ubuntu denis_ubuntu-PROD
-docker tag denis_ubuntu denis_ubuntu-PROD:v2
+docker tag test01_ubuntu test01_ubuntu-PROD
+docker tag test01_ubuntu test01_ubuntu-PROD:v2
 
 docker rm   # delete container
 docker rmi  # delete image
 
 UPDATE IMAGE
 ~~~~~~~~~~~~~
-docker run -d -p 7777:80 denis_ubuntu4
+docker run -d -p 7777:80 test01_ubuntu4
 docker exec -it 5267e21d140 /bin/bash
 echo "V2" >> /var/www/html/index.html
 exit
-docker commit 5267e21d140 denis_v2:latest
+docker commit 5267e21d140 test01_v2:latest
 
 Export/Import Docker Image to file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
